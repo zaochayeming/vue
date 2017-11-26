@@ -5,6 +5,7 @@
       {{ index }}.{{ value }}
     </div>
     <button @click="switchPosition">淡淡的</button>
+    <button @click="switchPosition">淡淡的</button>
   </div>
 </template>
 

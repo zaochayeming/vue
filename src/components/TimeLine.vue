@@ -1,7 +1,7 @@
 <template>
   <div id="timeLine">
       <p>查看就诊记录</p>
-      <section v-for="item in medicalRecords">
+      <section v-for="item in medicalRecords" :key="item">
           <span>
               <div class="outCircle">
                   <div class="innerCircle">

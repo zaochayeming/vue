@@ -8,21 +8,23 @@
                   </div>
               </div>
               <div class="date">
-                  {{item.time}}
+                 <strong>{{item.time}}</strong>
               </div>
               <i></i>
           </span>
           <article>
-                <div class="hospital">
-                    <span>{{item.hospital}}</span><span>{{item.medicalType}}</span><span>{{item.code}}</span>
+                <div>
+                    <strong>就诊医院</strong>{{item.hospital}}
+                    <strong>医疗类型</strong>{{item.medicalType}}
+                    <strong>就诊流水号</strong>{{item.code}}
                 </div>
                 <div>
-                    <span>入院诊断</span>
-                    <span>{{item.Diagnosis}}</span>
+                    <strong>入院诊断</strong>
+                    {{item.Diagnosis}}
                 </div>
-                <div>
-                    <span>入院诊断</span>
-                    <span>{{item.Diagnosis}}</span>
+                 <div>
+                    <strong>入院诊断</strong>{{item.Diagnosis}}
+
                 </div>
           </article>
       </section>
@@ -41,25 +43,36 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    @base: blue;
+    @blue: #0888F2;
+    @red: #FF4949;
+    @base: #979797;
     #timeLine {
       display: flex;
       flex-direction: column;
+      font-size: 13px;
+      strong {
+          margin: 0 40px 0 22px;
+      }
       p {
           font-size: 16px;
       }
       section {
           display: flex;
           flex-direction: row;
+          position: relative;
           align-items:flex-start;
+          height: 100%;
+          color: #4A5769;
+          align-content: stretch;
+          padding-bottom: 30px;
           span {
               display: flex;
               flex-direction: row;
               align-items:center;
               .outCircle{
-                  width: 16px;
-                  height: 16px;
-                  border-radius: 16px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 12px;
                   background-color: @base;
                   display: flex;
                   justify-content: center;
@@ -68,18 +81,17 @@ export default {
                   .innerCircle {
                       width: 6px;
                       height: 6px;
-                      background-color: @base;
+                      background-color: @blue;
                       border-radius: 6px;
-                      border: 3px solid #fff;
+                      border: 2px solid #fff;
                   }
               }
-              .date {
-                  margin-left: 15px;
-                  font-size: 13px;
-                  line-height: 16px;
-                  font-weight: bold;
-                  height: auto;
-              }
+            //   .date {
+            //       margin-left: 22px;
+            //       line-height: 18px;
+            //       height: auto;
+            //       font-size: 14px;
+            //   }
               i {
                   width: 28px;
                   height: 28px;
@@ -89,35 +101,30 @@ export default {
           article {
               display: flex;
               flex-direction: column;
-              font-size: 13px;
-              .hospital {
-                span:first-child {
-                  font-size: 16px
-                }
-              }
               div {
                   display: flex;
                   flex-direction: row;
+                  line-height: 25px;
               }
           }
       }
       section:before {
           content: '';
-          position: relative;
+          position: absolute;
           top: 0;
-          left: 8px;
+          left: 6px;
           height: 100%;
-          width: 2px;
+          width: 1px;
           background: @base;
           margin-top: 10px;
       }
       section:last-child:before {
           content: '';
-          position: relative;
+          position: absolute;
           top: 0;
           left: 8px;
           height: 0;
-          width: 2px;
+          width: 1px;
           background: none;
           margin-top: 10px;
       }

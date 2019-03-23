@@ -1,14 +1,17 @@
 <template>
   <div class="hello">
-    <p>{{msg}}</p>
+    <!-- <p>{{msg}}</p>
     <div v-for="(value, index) in items" :key="index">
       {{ index }}.{{ value }}
     </div>
     <button @click="switchPosition">淡淡的</button>
+    <button @click="switchPosition">淡淡的</button> -->
+	  <timeLine :medicalRecords='medicalRecords'></timeLine>
   </div>
 </template>
 
 <script>
+import timeLine from './TimeLine'
 export default {
   name: 'HelloWorld',
   data () {
@@ -20,8 +23,42 @@ export default {
       x: ['1', '2', '3'],
       y: ['4', '5', '36', '37'],
       items: ['sdsd', 'sdcsdf', 'rtyrty'],
-      items2: ['gfhfgh', 'sdcsdf', 'tetert']
+      items2: ['gfhfgh', 'sdcsdf', 'tetert'],
+      medicalRecords: [{
+        time: '2017-04-25 10:21:00',
+        hospital: '上海市长海医院',
+        medicalType: '住院',
+        code: '7382734823748273',
+        Diagnosis: '入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111'
+      }, {
+        time: '2017-04-25 10:21:00',
+        hospital: '上海市长海医院',
+        medicalType: '住院',
+        code: '7382734823748273',
+        Diagnosis: '入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111'
+      }, {
+        time: '2017-04-25 10:21:00',
+        hospital: '上海市长海医院',
+        medicalType: '住院',
+        code: '7382734823748273',
+        Diagnosis: '入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111'
+      }, {
+        time: '2017-04-25 10:21:00',
+        hospital: '上海市长海医院',
+        medicalType: '住院',
+        code: '7382734823748273',
+        Diagnosis: '入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111'
+      }, {
+        time: '2017-04-25 10:21:00',
+        hospital: '上海市长海医院',
+        medicalType: '住院',
+        code: '7382734823748273',
+        Diagnosis: '入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111，入院诊断1111'
+      }]
     }
+  },
+  components: {
+    timeLine
   },
   methods: {
     cc () {
